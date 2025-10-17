@@ -15,8 +15,8 @@
 
 @media (max-width: 375px) {
     .current-order-card {
-        width: 50vw;
-        height: 150px;
+        width: 60vw;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
         position: fixed;
         right: 25px;
         top: 210px;
