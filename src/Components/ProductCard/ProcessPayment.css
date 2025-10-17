@@ -5,7 +5,26 @@
     border-radius: 16px;
     padding: 1.5rem 2rem;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
+    position: relative;
+}
+
+@media (max-width: 375px) {
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        left: 220px;
+        background: transparent;
+        color: red;
+    }
+
+    .payment-container {
+        justify-content: center;
+        position: fixed;
+        left: 125px;
+        top: 60px;
+    }
+
 }
 
 .subtitle {
@@ -30,11 +49,13 @@
     font-weight: 700;
 }
 
+
 .payment-methods {
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
     margin-bottom: 1rem;
+
 }
 
 .method-btn {
@@ -48,6 +69,11 @@
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s;
+
+}
+
+.method-btn:hover {
+    background: #f3f3f3;
 }
 
 .method-btn.selected {
@@ -55,6 +81,7 @@
     color: #fff;
     border-color: #111;
 }
+
 
 .cash-details {
     background: #f8f9fa;
@@ -82,130 +109,17 @@
     justify-content: space-between;
     margin: 0.3rem 0;
     font-size: 0.95rem;
+    color: black;
 }
 
 .green {
     color: #16a34a;
+    font-weight: 600;
 }
 
 .actions {
     display: flex;
     justify-content: space-between;
-
-    .payment-container {
-        width: 420px;
-        margin: 2rem auto;
-        background: #fff;
-        border-radius: 16px;
-        padding: 1.5rem 2rem;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        font-family: 'Inter', sans-serif;
-    }
-
-    .subtitle {
-        color: #555;
-        font-size: 14px;
-        margin-bottom: 1rem;
-    }
-
-    .total-box {
-        background: #f6f6f9;
-        padding: 1rem;
-        border-radius: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1.2rem;
-    }
-
-    .amount {
-        color: #111;
-        font-size: 1.4rem;
-        font-weight: 700;
-    }
-
-    .payment-methods {
-        display: flex;
-        flex-direction: column;
-        gap: 0.7rem;
-        margin-bottom: 1rem;
-    }
-
-    .method-btn {
-        display: flex;
-        align-items: center;
-        gap: 0.7rem;
-        background: #fff;
-        border: 2px solid #ddd;
-        border-radius: 10px;
-        padding: 0.8rem 1rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.2s;
-    }
-
-    .method-btn.selected {
-        background: #111;
-        color: #fff;
-        border-color: #111;
-    }
-
-    .cash-details {
-        background: #f8f9fa;
-        padding: 1rem;
-        border-radius: 12px;
-        margin-top: 1rem;
-    }
-
-    .cash-details label {
-        font-weight: 500;
-        display: block;
-        margin-bottom: 0.4rem;
-    }
-
-    .cash-details input {
-        width: 100%;
-        padding: 0.6rem;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        margin-bottom: 1rem;
-    }
-
-    .summary p {
-        display: flex;
-        justify-content: space-between;
-        margin: 0.3rem 0;
-        font-size: 0.95rem;
-    }
-
-    .green {
-        color: #16a34a;
-    }
-
-    .actions {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 1.5rem;
-    }
-
-    .cancel,
-    .complete {
-        padding: 0.6rem 1.4rem;
-        border-radius: 8px;
-        border: none;
-        cursor: pointer;
-        font-weight: 600;
-    }
-
-    .cancel {
-        background: #f3f4f6;
-    }
-
-    .complete {
-        background: #111;
-        color: white;
-    }
-
     margin-top: 1.5rem;
 }
 
@@ -216,10 +130,15 @@
     border: none;
     cursor: pointer;
     font-weight: 600;
+    transition: all 0.2s ease;
 }
 
 .cancel {
     background: #f3f4f6;
+}
+
+.cancel:hover {
+    background: #e5e7eb;
 }
 
 .complete {
@@ -227,10 +146,15 @@
     color: white;
 }
 
+.complete:hover {
+    background: #333;
+}
+
+
 .close-btn {
     position: absolute;
-    top: 15px;
-    right: 20px;
+    top: 10px;
+    left: 220px;
     background: transparent;
     border: none;
     font-size: 26px;

@@ -9,7 +9,12 @@ const ProcessPayment = ({ totalAmount = 0, onClose = () => { } }) => {
   const [amountTendered, setAmountTendered] = useState("");
 
   const handlePaymentComplete = () => {
-    alert("Payment Complete");
+    if (!amountTendered || Number(amountTendered) <= 0) {
+      alert("⚠️ Please enter a valid amount before processing payment.");
+      return;
+    }
+
+    alert("✅ Payment Complete");
   };
 
   const handleAmountChange = (e) => {
@@ -61,6 +66,7 @@ const ProcessPayment = ({ totalAmount = 0, onClose = () => { } }) => {
             placeholder="Enter cash amount"
             value={amountTendered}
             onChange={handleAmountChange}
+
           />
 
           <div className="summary">

@@ -9,7 +9,6 @@
 
 }
 
-
 .productmenu-container>div {
     background-color: #fff;
     border-radius: 12px;
@@ -106,4 +105,20 @@
 .category-buttons button.active {
     background-color: #111;
     color: #fff;
+}
+
+@media (max-width: 375px) {
+    .productmenu-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .productmenu-container>div {
+        width: 180px;
+    }
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #333;
 }
