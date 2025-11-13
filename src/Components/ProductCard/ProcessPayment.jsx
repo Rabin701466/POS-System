@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaRegCreditCard } from "react-icons/fa6";
+import { FaRegCreditCard } from "react-icons/fa";
 import { BsCashCoin } from "react-icons/bs";
 import { HiDevicePhoneMobile } from "react-icons/hi2";
 import "./ProcessPayment.css";
@@ -8,24 +8,24 @@ const ProcessPayment = ({ totalAmount = 0, onClose = () => { } }) => {
   const [paymentMethod, setPaymentMethod] = useState("Cash");
   const [amountTendered, setAmountTendered] = useState("");
 
+  const handleAmountChange = (e) => {
+    const amount = e.target.value;
+    setAmountTendered(amount);
+    const change = (Number(amount) - totalAmount).toFixed(2);
+    setChangeDue(change >= 0 ? change : "0.00");
+  };
+
   const handlePaymentComplete = () => {
-    if (!amountTendered || Number(amountTendered) <= 0) {
-      alert("⚠️ Please enter a valid amount before processing payment.");
+    if (paymentMethod === "Cash" && Number(amountTendered) < totalAmount) {
+      alert("Insufficient amount tendered");
       return;
     }
-
-    alert("✅ Payment Complete");
+    onClose();
   };
 
-  const handleAmountChange = (e) => {
-    const value = e.target.value;
-    if (!isNaN(value)) setAmountTendered(value);
-  };
-
-  const changeDue =
-    amountTendered && !isNaN(amountTendered)
-      ? (Number(amountTendered) - totalAmount).toFixed(2)
-      : "0.00";
+  const changeDue = amountTendered && !isNaN(amountTendered)
+    ? (Number(amountTendered) - totalAmount).toFixed(2)
+    : "0.00";
 
   return (
     <div className="payment-container">

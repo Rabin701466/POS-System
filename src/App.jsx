@@ -54,6 +54,10 @@ function App() {
     setShowPayment(true);
   };
 
+  const handleClearCart = () => {
+    setCartItems([]);
+  };
+
   return (
     <>
       <Navbar className="navbar" />
@@ -68,6 +72,7 @@ function App() {
             handleDelete={handleDelete}
             taxRate={taxRate}
             onProcessPayment={handleProcessPayment}
+            handleClearCart={handleClearCart}
           />
         </div>
 

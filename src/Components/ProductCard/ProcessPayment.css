@@ -7,6 +7,7 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     font-family: "Inter", sans-serif;
     position: relative;
+
 }
 
 @media (max-width: 375px) {
@@ -121,6 +122,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 1.5rem;
+    margin-bottom: 25px;
 }
 
 .cancel,

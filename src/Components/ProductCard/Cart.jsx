@@ -7,6 +7,7 @@ const formatCurrency = (value) => `$${Number(value || 0).toFixed(2)}`;
 const Cart = ({
     cartItems = [],
     handleIncrease = () => { },
+    handleClearCart = () => { },
     handleDecrease = () => { },
     handleDelete = () => { },
     taxRate = 0.08,
@@ -93,6 +94,7 @@ const Cart = ({
                     <strong>{formatCurrency(total)}</strong>
                 </div>
 
+
                 <button
                     className="process-btn"
                     disabled={cartItems.length === 0}
@@ -100,8 +102,15 @@ const Cart = ({
                 >
                     Process Payment
                 </button>
+                <button
+                    className="clear-btn"
+                    disabled={cartItems.length === 0}
+                    onClick={handleClearCart}
+                >
+                    Clear
+                </button>
             </footer>
-        </aside>
+        </aside >
     );
 };
 
