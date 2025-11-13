@@ -140,7 +140,7 @@
 }
 
 .cancel:hover {
-    background: #e5e7eb;
+    background: rgb(136, 135, 135);
 }
 
 .complete {
